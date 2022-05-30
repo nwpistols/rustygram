@@ -1,0 +1,96 @@
+### Sign Up
+POST http://localhost:5000/api/auth/signup 
+Content-Type: application/json
+
+{
+    "email": "test3@test.com",
+    "password": "12345678",
+    "username": "test3"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login 
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "12345678"
+}
+
+
+### User Profile
+
+GET http://localhost:5000/api/profiles/23ee34b1-c70e-4540-9b63-12f03f21e5ca
+
+### user posts
+GET http://localhost:5000/api/profiles/23ee34b1-c70e-4540-9b63-12f03f21e5ca/posts
+
+
+### Current User
+GET http://localhost:5000/api/auth/current 
+
+### Logout
+POST http://localhost:5000/api/auth/logout 
+
+### Get Posts
+GET http://localhost:5000/api/posts
+
+### Create Post
+POST http://localhost:5000/api/posts 
+Content-Type: application/json
+
+{
+    "url": "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "caption": "Beautiful three"
+}
+
+### Delete Post by Id
+DELETE http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a
+
+### Get Post by Id
+GET http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a
+
+### Get Post likes by postID
+GET http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a/likes
+
+### Like or Dislike a post
+POST http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a/likes
+
+### Get Comments by Post Id
+GET http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a/comments
+
+
+
+### DELETE Comment on Post
+DELETE http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a/comments/e569e878-66a7-47ab-b650-fb8297573134
+
+### Like or dislike Comment on Post
+POST http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a/comments/e569e878-66a7-47ab-b650-fb8297573134/likes
+
+### Update Comment on Post
+PATCH http://localhost:5000/api/posts/d0850a0d-1115-4d65-b807-871592ef1f1a/comments/7dc4aa23-63cf-4973-8ee8-b40d336f0520
+Content-Type: application/json
+
+{
+    "contents": "EDIT: I MEANT HORRIBLE"
+}
+
+### Get Followers by leader id
+GET http://localhost:5000/api/followers/9fd3eea7-f7b3-4b78-98d2-d3fe7a39efab
+
+### Get Followers COUNT by leader id
+GET http://localhost:5000/api/followers/9fd3eea7-f7b3-4b78-98d2-d3fe7a39efab/count
+
+### get leaders by follower id
+GET http://localhost:5000/api/leaders/9fd3eea7-f7b3-4b78-98d2-d3fe7a39efab
+
+### get leaders COUNT by follower id
+GET http://localhost:5000/api/leaders/9fd3eea7-f7b3-4b78-98d2-d3fe7a39efab/count
+
+### follow or unfollow someone
+POST http://localhost:5000/api/followers
+Content-Type: application/json
+
+{
+    "leaderId": "9fd3eea7-f7b3-4b78-98d2-d3fe7a39efab"
+}
